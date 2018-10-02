@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-
-	<!DOCTYPE html>
+<!DOCTYPE html>
 	<html lang="zxx" class="no-js">
 	<head>
 		<!-- Mobile Specific Meta -->
@@ -393,20 +391,23 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 						</div>
 						<p class="mt-50 mx-auto footer-text col-lg-12">
 
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Picmora
+							Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Picmora
 						</p>
 					</div>
 				</div>
 			</footer>
 			<!-- End footer Area -->
 
-			//required for firebase
+			<!-- required for firebase -->
 			<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
 			<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-auth.js"></script>
 			<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
 			<script src="js/firebase/init_firebase.js"></script>
-			//Custom js for firebase signup
+			<!-- Custom js for firebase signup -->
 		 <script src="js/firebase/signup.js"></script>
+		 <!-- Check if user is signed in or not -->
+		 <script src="js/firebase/checkUserStatus.js"></script>
+
 
 			<script src="js/vendor/jquery-2.2.4.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -427,21 +428,19 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 			<script src="js/mail-script.js"></script>
 			<script src="js/main.js"></script>
 			<script type="text/javascript">
+			function check(){
+			  if (document.getElementById('password').value ==
+			    document.getElementById('confirm_password').value) {
+			  	document.getElementById('message').innerHTML = '';
+			    document.getElementById("submit").disabled = false;
+			  } else {
+			    document.getElementById('message').style.color = 'Orange';
+			    document.getElementById('message').innerHTML = 'Not Matching';
+			    document.getElementById("submit").disabled = true;
+			  }
+			}
+		</script>
 
-				function check(){
-  if (document.getElementById('password').value ==
-    document.getElementById('confirm_password').value) {
-  document.getElementById('message').innerHTML = '';
-    document.getElementById("submit").disabled = false;
-  } else {
-    document.getElementById('message').style.color = 'Orange';
-    document.getElementById('message').innerHTML = 'Not Matching';
-     document.getElementById("submit").disabled = true;
-  }
-}
+	</body>
 
-			</script>
-
-		</body>
-	</html>
->>>>>>> 547dd94d03007cf72133cb1b983164f0245bbd77
+</html>
