@@ -19,3 +19,27 @@ function match(){
 							document.getElementById('message').innerHTML = '';
 						}
 				}
+function  Photography_1(){
+	document.getElementById("wedding").selected="true";
+
+}
+function  Photography_2(){
+	document.getElementById("engagement").selected="true";
+
+}
+function  Photography_3(){
+document.getElementById("maternity").selected="true";
+
+}
+function Photography_4(){
+document.getElementById("kids").selected="true";
+
+}
+function  Photography_5(){
+document.getElementById("birthday").selected="true";
+
+}
+function  Photography_6(){
+document.getElementById("pre-wedding").selected="true";
+
+}

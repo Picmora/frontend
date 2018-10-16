@@ -19,7 +19,7 @@
 
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
 			<!--
-			CSS
+			CSS and script
 			============================================= -->
 			<link rel="stylesheet" href="css/linearicons.css">
 			<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -32,7 +32,7 @@
 			<link rel="stylesheet" href="css/main.css">
 		</head>
 		<body>
-
+			<p id="topper"></p>
 			  <header id="header" id="home">
 			    <div class="container">
 			    	<div class="row align-items-center justify-content-between d-flex">
@@ -68,70 +68,52 @@
 				<div class="container no-padding fullwidth">
 					<div class="row fullscreen d-flex align-items-center justify-content-center">
 						<div class="banner-content col-lg-7 col-md-6 ">
-							<h6 class="text-white ">the Royal Essence of Journey</h6>
 							<h1 class="text-white text-uppercase">
-								Relaxed Journey Ever				
+								Picmora				
 							</h1>
-							<p class="pt-20 pb-20 text-white">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-							</p>
-							<a href="#" class="primary-btn text-uppercase">Rent Car Now</a>
+	
 						</div>
 						<div class="col-lg-5  col-md-6 header-right no-padding">
-							<h4 class="text-white pb-30">Quick Booking!</h4>
+							<h4 class="text-white pb-30">Booking</h4>
 							<form class="form" role="form" autocomplete="off">
+								<div class="form-group">
+							    	<input type="Radio" name="duration" id="single"><span style="font-weight:bold;color:white;">Single Day&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+							    	<input type="Radio" name="duration" id="multi"><span style="font-weight:bold;color:white;">Multi Day&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+							    	<input type="Radio" name="duration" id="hourly"><span style="font-weight:bold;color:white;">Hourly</span>
+							    </div>
 							    <div class="form-group">
 							       	<div class="default-select" id="default-select"">
-										<select>
-											<option value="" disabled selected hidden>Select Your Car</option>
-											<option value="1">BMW</option>
-											<option value="1">Farrari</option>
-											<option value="1">Toyota</option>
+										<select id="event_type">
+											<option value="">Event Type</option>
+											<option value="1" id="wedding">Wedding Photography</option>
+											<option value="2" id="engagement">Engagement Photography</option>
+											<option value="3" id="maternity">Maternity Photography</option>
+											<option value="4" id="kids">Kids Photography</option>
+											<option value="5" id="birthday">Birthday Photography</option>
+											<option value="6" id="pre-wedding">Pre-Wedding Photography</option>
 										</select>
 									</div>
 							    </div>
+							  
 							    <div class="form-group row">
-							        <div class="col-md-6 wrap-left">
-								       	<div class="default-select" id="default-select"">
-											<select>
-												<option value="" disabled selected hidden>Pickup</option>
-												<option value="1">Pickup One</option>
-												<option value="1">Pickup Two</option>
-												<option value="1">Pickup Three</option>
-												<option value="1">Pickup Four</option>
-											</select>
-										</div>
-							        </div>
-							        <div class="col-md-6 wrap-right">
+							    <div class="col-md-6 wrap-left">
 										<div class="input-group dates-wrap">                                          
-											<input id="datepicker" class="dates form-control" id="exampleAmount" placeholder="Date & time" type="text">                        
+											<input id="datepicker2" class="dates form-control" id="exampleAmount" placeholder="From Date & time" type="text">                        
+											<div class="input-group-prepend">
+												<span  class="input-group-text"><span class="lnr lnr-calendar-full"></span></span>
+											</div>											
+										</div>
+								</div>	
+							    	<div class="col-md-6 wrap-right">
+										<div class="input-group dates-wrap">                                          
+											<input id="datepicker" class="dates form-control" id="exampleAmount" placeholder="To Date & time" type="text">                        
 											<div class="input-group-prepend">
 												<span  class="input-group-text"><span class="lnr lnr-calendar-full"></span></span>
 											</div>											
 										</div>
 							        </div>
 							    </div>
-							    <div class="form-group row">
-							        <div class="col-md-6 wrap-left">
-								       	<div class="default-select" id="default-select"">
-											<select>
-												<option value="" disabled selected hidden>Drop off</option>
-												<option value="1">Drop off One</option>
-												<option value="1">Drop off Two</option>
-												<option value="1">Drop off Three</option>
-												<option value="1">Drop off Four</option>
-											</select>
-										</div>
-							        </div>
-							        <div class="col-md-6 wrap-right">
-										<div class="input-group dates-wrap">                                              
-											<input id="datepicker2" class="dates form-control" id="exampleAmount" placeholder="Date & time" type="text">                        
-											<div class="input-group-prepend">
-												<span  class="input-group-text"><span class="lnr lnr-calendar-full"></span></span>
-											</div>											
-										</div>
-							        </div>
-							    </div>							    
+							        		    
 							    <div class="from-group">
 							    	<input class="form-control txt-field" type="text" name="name" placeholder="Your name">
 							    	<input class="form-control txt-field" type="email" name="email" placeholder="Email address">
@@ -139,7 +121,7 @@
 							    </div>
 							    <div class="form-group row">
 							        <div class="col-md-12">
-							            <button type="reset" class="btn btn-default btn-lg btn-block text-center text-uppercase">Confirm Car Booking</button>
+							            <button type="submit" class="btn btn-default btn-lg btn-block text-center text-uppercase">Confirm Booking</button>
 							        </div>
 							    </div>
 							</form>
@@ -148,65 +130,47 @@
 				</div>					
 			</section>
 			<!-- End banner Area -->	
-
 			<!-- Start feature Area -->
 			<section class="feature-area section-gap" id="service">
 				<div class="container">
 					<div class="row d-flex justify-content-center">
 						<div class="col-md-8 pb-40 header-text">
-							<h1>What Services we offer to our clients</h1>
+							<h1>What we offer?</h1>
 							<p>
-								Who are in extremely love with eco friendly system.
+								Let Expert's Do it For You
 							</p>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-lg-4 col-md-6">
 							<div class="single-feature">
-								<h4><span class="lnr lnr-user"></span>Expert Technicians</h4>
-								<p>
-									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
-								</p>
+								<h4 onclick="Photography_1()"><a href="#topper" class="top_link"><span class="lnr lnr-heart" style="font-size: 40px;"></span>Wedding Photography</a></h4>
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-6">
 							<div class="single-feature">
-								<h4><span class="lnr lnr-license"></span>Professional Service</h4>
-								<p>
-									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
-								</p>								
+								<h4 onclick="Photography_2()"><a href="#topper" class="top_link"><span class="lnr lnr-diamond" style="font-size: 33px;"></span>Engagement Photography</a></h4>								
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-6">
 							<div class="single-feature">
-								<h4><span class="lnr lnr-phone"></span>Great Support</h4>
-								<p>
-									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
-								</p>								
+								<h4 onclick="Photography_3()"><a href="#topper" class="top_link"><span class="lnr lnr-users" style="font-size: 40px;"></span>Maternity Photography</a></h4>			
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-6">
 							<div class="single-feature">
-								<h4><span class="lnr lnr-rocket"></span>Technical Skills</h4>
-								<p>
-									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
-								</p>				
+								<h4 onclick="Photography_4()"><a href="#topper" class="top_link"><span class="lnr lnr-smile" style="font-size: 40px;"></span>Kids Photography</a></h4>
+								
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-6">
 							<div class="single-feature">
-								<h4><span class="lnr lnr-diamond"></span>Highly Recomended</h4>
-								<p>
-									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
-								</p>								
+								<h4 onclick="Photography_5()"><a href="#topper" class="top_link"><span class="lnr lnr-star" style="font-size: 40px;"></span>Birthday Photography</a></h4>								
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-6">
 							<div class="single-feature">
-								<h4><span class="lnr lnr-bubble"></span>Positive Reviews</h4>
-								<p>
-									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
-								</p>									
+								<h4 onclick="Photography_6()"><a href="#topper" class="top_link"><span class="lnr lnr-gift" style="font-size: 33px;"></span>Pre Wedding Photography</a></h4>								
 							</div>
 						</div>						
 					</div>
@@ -285,7 +249,7 @@
 						</div>	
 						<p class="mt-50 mx-auto footer-text col-lg-12">
 							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Picmora
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 						</p>											
 					</div>
@@ -310,7 +274,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 			<script src="js/jquery.counterup.min.js"></script>					
 			<script src="js/parallax.min.js"></script>		
 			<script src="js/mail-script.js"></script>	
-			<script src="js/main.js"></script>	
+			<script src="js/main.js"></script>
+			<script src="js/validator.js"></script>
 		</body>
 	</html>
 
