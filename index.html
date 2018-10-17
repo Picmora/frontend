@@ -1,6 +1,6 @@
 
 	<!DOCTYPE html>
-	<html lang="zxx" class="no-js">
+	<html lang="en-GB" class="no-js">
 	<head>
 		<!-- Mobile Specific Meta -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,6 +21,8 @@
 			<!--
 			CSS and script
 			============================================= -->
+			<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.css">
+			<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css">
 			<link rel="stylesheet" href="css/linearicons.css">
 			<link rel="stylesheet" href="css/font-awesome.min.css">
 			<link rel="stylesheet" href="css/bootstrap.css">
@@ -32,7 +34,6 @@
 			<link rel="stylesheet" href="css/main.css">
 		</head>
 		<body>
-			<p id="topper"></p>
 			  <header id="header" id="home">
 			    <div class="container">
 			    	<div class="row align-items-center justify-content-between d-flex">
@@ -77,14 +78,14 @@
 							<h4 class="text-white pb-30">Booking</h4>
 							<form class="form" role="form" autocomplete="off">
 								<div class="form-group">
-							    	<input type="Radio" name="duration" id="single"><span style="font-weight:bold;color:white;">Single Day&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-							    	<input type="Radio" name="duration" id="multi"><span style="font-weight:bold;color:white;">Multi Day&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-							    	<input type="Radio" name="duration" id="hourly"><span style="font-weight:bold;color:white;">Hourly</span>
+							    	<input type="Radio" name="duration" onclick="single()" required><span style="font-weight:bold;color:white;">Single Day&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+							    	<input type="Radio" name="duration" onclick="multi()"><span style="font-weight:bold;color:white;">Multi Day&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+							    	<input type="Radio" name="duration" onclick="hourly()"><span style="font-weight:bold;color:white;">Hourly</span>
 							    </div>
 							    <div class="form-group">
-							       	<div class="default-select" id="default-select"">
-										<select id="event_type">
-											<option value="">Event Type</option>
+							    		<div>
+										<select style="width: 100%;padding: 12px;color: grey;border-radius: 4px;">
+											<option value="0">Event Type</option>
 											<option value="1" id="wedding">Wedding Photography</option>
 											<option value="2" id="engagement">Engagement Photography</option>
 											<option value="3" id="maternity">Maternity Photography</option>
@@ -93,12 +94,12 @@
 											<option value="6" id="pre-wedding">Pre-Wedding Photography</option>
 										</select>
 									</div>
-							    </div>
-							  
+									</div>
+
 							    <div class="form-group row">
 							    <div class="col-md-6 wrap-left">
 										<div class="input-group dates-wrap">                                          
-											<input id="datepicker2" class="dates form-control" id="exampleAmount" placeholder="From Date & time" type="text">                        
+											<input id="datepicker" class="dates form-control" placeholder="From Date" type="text" disabled>                        
 											<div class="input-group-prepend">
 												<span  class="input-group-text"><span class="lnr lnr-calendar-full"></span></span>
 											</div>											
@@ -106,18 +107,36 @@
 								</div>	
 							    	<div class="col-md-6 wrap-right">
 										<div class="input-group dates-wrap">                                          
-											<input id="datepicker" class="dates form-control" id="exampleAmount" placeholder="To Date & time" type="text">                        
+											<input id="datetimepicker3" class="dates form-control" placeholder="From Time" type="text" disabled>                        
+											<div class="input-group-prepend">
+												<span  class="input-group-text"><span class="lnr lnr-clock"></span></span>
+											</div>											
+										</div>
+							        </div>
+							    </div>
+							    <div class="form-group row">
+							    <div class="col-md-6 wrap-left">
+										<div class="input-group dates-wrap">                                          
+											<input id="datepicker2" class="dates form-control" placeholder="To Date" type="text" disabled>                        
 											<div class="input-group-prepend">
 												<span  class="input-group-text"><span class="lnr lnr-calendar-full"></span></span>
+											</div>											
+										</div>
+								</div>	
+							    	<div class="col-md-6 wrap-right">
+										<div class="input-group dates-wrap">                                          
+											<input id="datetimepicker" class="dates form-control" placeholder="To Time" type="text" disabled>                        
+											<div class="input-group-prepend">
+												<span  class="input-group-text"><span class="lnr lnr-clock"></span></span>
 											</div>											
 										</div>
 							        </div>
 							    </div>
 							        		    
 							    <div class="from-group">
-							    	<input class="form-control txt-field" type="text" name="name" placeholder="Your name">
-							    	<input class="form-control txt-field" type="email" name="email" placeholder="Email address">
-							    	<input class="form-control txt-field" type="tel" name="phone" placeholder="Phone number">
+							    	<input class="form-control txt-field" type="text" name="name" placeholder="Your name" required>
+							    	<input class="form-control txt-field" type="email" name="email" placeholder="Email address" required>
+							    	<input class="form-control txt-field" type="tel" name="phone" placeholder="Phone number" required>
 							    </div>
 							    <div class="form-group row">
 							        <div class="col-md-12">
@@ -144,33 +163,33 @@
 					<div class="row">
 						<div class="col-lg-4 col-md-6">
 							<div class="single-feature">
-								<h4 onclick="Photography_1()"><a href="#topper" class="top_link"><span class="lnr lnr-heart" style="font-size: 40px;"></span>Wedding Photography</a></h4>
+								<h4 onclick="Photography_1()"><span class="lnr lnr-heart" style="font-size: 40px;"></span>Wedding Photography</h4>
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-6">
 							<div class="single-feature">
-								<h4 onclick="Photography_2()"><a href="#topper" class="top_link"><span class="lnr lnr-diamond" style="font-size: 33px;"></span>Engagement Photography</a></h4>								
+								<h4 onclick="Photography_2()"><span class="lnr lnr-diamond" style="font-size: 33px;"></span>Engagement Photography</h4>								
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-6">
 							<div class="single-feature">
-								<h4 onclick="Photography_3()"><a href="#topper" class="top_link"><span class="lnr lnr-users" style="font-size: 40px;"></span>Maternity Photography</a></h4>			
+								<h4 onclick="Photography_3()"><span class="lnr lnr-users" style="font-size: 40px;"></span>Maternity Photography</h4>			
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-6">
 							<div class="single-feature">
-								<h4 onclick="Photography_4()"><a href="#topper" class="top_link"><span class="lnr lnr-smile" style="font-size: 40px;"></span>Kids Photography</a></h4>
+								<h4 onclick="Photography_4()"><span class="lnr lnr-smile" style="font-size: 40px;"></span>Kids Photography</h4>
 								
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-6">
 							<div class="single-feature">
-								<h4 onclick="Photography_5()"><a href="#topper" class="top_link"><span class="lnr lnr-star" style="font-size: 40px;"></span>Birthday Photography</a></h4>								
+								<h4 onclick="Photography_5()"><span class="lnr lnr-star" style="font-size: 40px;"></span>Birthday Photography</h4>								
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-6">
 							<div class="single-feature">
-								<h4 onclick="Photography_6()"><a href="#topper" class="top_link"><span class="lnr lnr-gift" style="font-size: 33px;"></span>Pre Wedding Photography</a></h4>								
+								<h4 onclick="Photography_6()"><span class="lnr lnr-gift" style="font-size: 33px;"></span>Pre Wedding Photography</h4>								
 							</div>
 						</div>						
 					</div>
@@ -256,7 +275,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 				</div>
 			</footer>	
 			<!-- End footer Area -->		
-
+			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/locales/bootstrap-datepicker.en-GB.min.js"></script>
+			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.js"></script>
 			<script src="js/vendor/jquery-2.2.4.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 			<script src="js/vendor/bootstrap.min.js"></script>			
@@ -276,6 +296,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 			<script src="js/mail-script.js"></script>	
 			<script src="js/main.js"></script>
 			<script src="js/validator.js"></script>
+			<script src="js/datepair/dist/datepair.js"></script>
 		</body>
 	</html>
 
