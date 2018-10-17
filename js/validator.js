@@ -74,7 +74,8 @@ function multi(){
 	document.getElementById("datetimepicker").required = true;
 }
 function hourly(){
-	document.getElementById("datepicker").disabled = true;
+	document.getElementById("datepicker").placeholder = "Date";
+	document.getElementById("datepicker").disabled = false;
 	document.getElementById("datetimepicker3").disabled = false;
 	document.getElementById("datetimepicker3").required = true;
 	document.getElementById("datepicker2").disabled = true;
