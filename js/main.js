@@ -13,7 +13,7 @@ $(document).ready(function(){
 	$(".fitscreen").css("height", fitscreen);
 
      if(document.getElementById("default-select")){
-          $('select').niceSelect();
+          $('select').niceSelect('update');
     };
 
     $('.img-pop-up').magnificPopup({
@@ -55,7 +55,6 @@ $(document).ready(function(){
         $( "#datepicker" ).datepicker();
         $( "#datepicker2" ).datepicker();
      });
-  
 
   // Mobile Navigation
   if ($('#nav-menu-container').length) {

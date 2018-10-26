@@ -2267,7 +2267,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .banner-area {
-  background: url(../img/header-bg.jpg) center;
+  background-color: #333
   background-size: cover;
 }
 
@@ -3482,6 +3482,18 @@ body.mobile-nav-active #mobile-nav-toggle {
 .commentform-area .form-control {
   border: none;
   background: #f9f9ff;
+}
+.top_link:link{
+  color: black;
+}
+.top_link:visited{
+  color: black;
+}
+.top_link:hover{
+  color: orange;
+}
+.top_link:active{
+  color: orange;
 }
 
 /*
