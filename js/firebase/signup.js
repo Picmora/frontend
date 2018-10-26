@@ -3,8 +3,6 @@ function signup(){
 
   var email = document.getElementById('email').value;
   var password = document.getElementById('password').value;
-  console.log(email);
-  console.log(password);
 
   firebase.auth().createUserWithEmailAndPassword(email, password)
   .then(function(user) {
