@@ -24,6 +24,7 @@
 		<script src="js/firebase/init_firebase.js"></script>
 		<!-- Check user is signed in or not -->
 		<script src="js/firebase/checkUserStatus.js"></script>
+		<script src="js/firebase/button_click_firebase.js"></script>
 		
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
 			<!--
@@ -87,15 +88,15 @@
 						</div>
 						<div class="col-lg-5  col-md-6 header-right no-padding">
 							<h4 class="text-white pb-30">Booking</h4>
-							<form class="form" role="form" autocomplete="off">
+							<div class="form" role="form" autocomplete="off">
 								<div class="form-group">
-							    	<input type="Radio" name="duration" onclick="single()" required><span style="font-weight:bold;color:white;">Single Day&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-							    	<input type="Radio" name="duration" onclick="multi()"><span style="font-weight:bold;color:white;">Multi Day&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-							    	<input type="Radio" name="duration" onclick="hourly()"><span style="font-weight:bold;color:white;">Hourly</span>
+							    	<input id="singleDay" type="Radio" name="duration" onclick="single()" required><span style="font-weight:bold;color:white;">Single Day&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+							    	<input id="multiDay" type="Radio" name="duration" onclick="multi()"><span style="font-weight:bold;color:white;">Multi Day&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+							    	<input id="hourlyDay" type="Radio" name="duration" onclick="hourly()"><span style="font-weight:bold;color:white;">Hourly</span>
 							    </div>
 							    <div class="form-group">
 							    		<div>
-										<select style="width: 100%;padding: 12px;color: grey;border-radius: 4px;">
+										<select id="eventType" style="width: 100%;padding: 12px;color: grey;border-radius: 4px;">
 											<option value="0">Event Type</option>
 											<option value="1" id="wedding">Wedding Photography</option>
 											<option value="2" id="engagement">Engagement Photography</option>
@@ -144,16 +145,16 @@
 							        </div>
 							    </div>
 							    <div class="from-group">
-							    	<input class="form-control txt-field" type="text" name="name" placeholder="Your name" required>
-							    	<input class="form-control txt-field" type="email" name="email" placeholder="Email address" required>
-							    	<input class="form-control txt-field" type="tel" name="phone" placeholder="Phone number" required>
+							    	<input id="name" class="form-control txt-field" type="text" name="name" placeholder="Your name" required>
+							    	<input id="email" class="form-control txt-field" type="email" name="email" placeholder="Email address" required>
+							    	<input id="phoneNo" class="form-control txt-field" type="tel" name="phone" placeholder="Phone number" required>
 							    </div>
 							    <div class="form-group row">
 							        <div class="col-md-12">
-							            <button type="submit" class="btn btn-default btn-lg btn-block text-center text-uppercase">Confirm Booking</button>
+							            <button  onClick="submitQueryForm()" class="btn btn-default btn-lg btn-block text-center text-uppercase">Confirm Booking</button>
 							        </div>
 							    </div>
-							</form>
+							<div class="form" role="form" autocomplete="off">
 						</div>
 					</div>
 				</div>
@@ -314,6 +315,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 			<script src="js/main.js"></script>
 			<script src="js/validator.js"></script>
 			<script src="js/datepair/dist/datepair.js"></script>
+
 
 		</body>
 	</html>
