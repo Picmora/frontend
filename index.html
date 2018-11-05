@@ -1,6 +1,6 @@
 
 	<!DOCTYPE html>
-	<html lang="en-GB" class="no-js">
+	<html>
 	<head>
 		<!-- Mobile Specific Meta -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,7 +15,7 @@
 		<!-- meta character set -->
 		<meta charset="UTF-8">
 		<!-- Site Title -->
-		<title>Car Rentals</title>
+		<title>Picmora</title>
 
 		<!-- Firebase -->
 		<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
@@ -30,8 +30,6 @@
 			<!--
 			CSS and script
 			============================================= -->
-			<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.css">
-			<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css">
 			<link rel="stylesheet" href="css/linearicons.css">
 			<link rel="stylesheet" href="css/font-awesome.min.css">
 			<link rel="stylesheet" href="css/bootstrap.css">
@@ -53,18 +51,7 @@
 				      <nav id="nav-menu-container">
 				        <ul class="nav-menu">
 				          <li class="menu-active"><a href="index.html">Home</a></li>
-				          <li><a href="about.html">About</a></li>
-				          <li><a href="cars.html">Cars</a></li>
-				          <li><a href="service.html">Service</a></li>
-				          <li><a href="team.html">Team</a></li>
-				          <li><a href="blog-home.html">Blog</a></li>
-				          <li><a href="contact.html">Contact</a></li>
-						  <li><a href="login.html" id="loginLink">Login</a></li>
-				          <li class="menu-has-children"><a href="">Pages</a>
-				            <ul>
-				              <li><a href="blog-single.html">Blog Single</a></li>
-				              <li><a href="elements.html">Elements</a></li>
-				            </ul>
+				          <li><a href="login.html" id="loginLink">Login</a></li>
 				          </li>
 				        </ul>
 				      </nav><!-- #nav-menu-container -->
@@ -76,7 +63,7 @@
 			<!-- start banner Area -->
 			<section class="banner-area relative" id="home">
 
-				<div class="overlay overlay-bg"></div>	
+			
 				<div class="container no-padding fullwidth">
 
 					<div class="row fullscreen d-flex align-items-center justify-content-center">
@@ -174,42 +161,57 @@
 					<div class="row">
 						<div class="col-lg-4 col-md-6">
 							<div class="single-feature">
-								<h4 onclick="Photography_1()"><span class="lnr lnr-heart" style="font-size: 40px;"></span>Wedding Photography</h4>
+								<h4 data-toggle="modal" data-target="#mymodal"><span class="lnr lnr-heart" style="font-size: 40px;"></span>Wedding Photography</h4>
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-6">
 							<div class="single-feature">
 
-								<h4 onclick="Photography_2()"><span class="lnr lnr-diamond" style="font-size: 33px;"></span>Engagement Photography</h4>								
-
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-6">
-							<div class="single-feature">
-
-								<h4 onclick="Photography_3()"><span class="lnr lnr-users" style="font-size: 40px;"></span>Maternity Photography</h4>			
+								<h4 data-toggle="modal" data-target="#mymodal"><span class="lnr lnr-diamond" style="font-size: 33px;"></span>Engagement Photography</h4>								
 
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-6">
 							<div class="single-feature">
 
-								<h4 onclick="Photography_4()"><span class="lnr lnr-smile" style="font-size: 40px;"></span>Kids Photography</h4>
+								<h4 data-toggle="modal" data-target="#mymodal"><span class="lnr lnr-users" style="font-size: 40px;"></span>Maternity Photography</h4>			
+
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6">
+							<div class="single-feature">
+
+								<h4 data-toggle="modal" data-target="#mymodal"><span class="lnr lnr-smile" style="font-size: 40px;"></span>Kids Photography</h4>
                 
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-6">
 							<div class="single-feature">
 
-								<h4 onclick="Photography_5()"><span class="lnr lnr-star" style="font-size: 40px;"></span>Birthday Photography</h4>								
+								<h4 data-toggle="modal" data-target="#mymodal"><span class="lnr lnr-star" style="font-size: 40px;"></span>Birthday Photography</h4>								
 
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-6">
 							<div class="single-feature">
 
-								<h4 onclick="Photography_6()"><span class="lnr lnr-gift" style="font-size: 33px;"></span>Pre Wedding Photography</h4>								
+								<h4 data-toggle="modal" data-target="#mymodal"><span class="lnr lnr-gift" style="font-size: 33px;"></span>Pre Wedding Photography</h4>
 
+
+							</div>
+						</div>
+						<div class="modal fade" id="mymodal">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h4>Choose Date and Time</h4>
+									</div>
+									<div class="modal-body">
+										<form>
+										<button class="btn" name="submitmodal" style="float:right;background:#4cd3e3;color: white;"><a href="photographer_list.html">Submit</a></button>
+									</form>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -290,10 +292,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 						</p>
 					</div>
 				</div>
-
-			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/locales/bootstrap-datepicker.en-GB.min.js"></script>
-			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.js"></script>
-
 			<script src="js/vendor/jquery-2.2.4.min.js"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 			<script src="js/vendor/bootstrap.min.js"></script>
@@ -314,7 +312,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 			<script src="js/mail-script.js"></script>	
 			<script src="js/main.js"></script>
 			<script src="js/validator.js"></script>
-			<script src="js/datepair/dist/datepair.js"></script>
 
 
 		</body>

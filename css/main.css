@@ -13,7 +13,7 @@
 }
 
 ::selection {
-  background-color: #fab700;
+  background-color: #4cd3e3;
   color: #fff;
 }
 
@@ -50,7 +50,7 @@
 }
 
 body {
-  color: #777777;
+  
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 300;
@@ -1891,7 +1891,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header.header-scrolled {
-  background: rgba(0, 0, 0, 0.8);
+  background: #4cd3e3;
   transition: all 0.5s;
 }
 
@@ -2267,7 +2267,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .banner-area {
-  background-color: #333
+  background-color: #4cd3e3;
   background-size: cover;
 }
 
@@ -2401,7 +2401,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 .header-right .btn-lg {
   font-size: 14px;
   color: #fff;
-  background-color: #fab700;
+  background-color: #4cd3e3;
 }
 
 @media (max-width: 480px) {
@@ -2492,7 +2492,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .single-feature:hover h4 {
-  color: #fab700;
+  color: #4cd3e3;
 }
 
 .single-feature h4 {
