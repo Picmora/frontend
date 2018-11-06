@@ -1891,7 +1891,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header.header-scrolled {
-  background: #4cd3e3;
+  background: #19cad2;
   transition: all 0.5s;
 }
 
@@ -2267,7 +2267,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .banner-area {
-  background-color: #4cd3e3;
+  background-color: #19cad2;
   background-size: cover;
 }
 
