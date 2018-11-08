@@ -16,7 +16,6 @@
 		<meta charset="UTF-8">
 		<!-- Site Title -->
 		<title>Picmora</title>
-
 		<!-- Firebase -->
 		<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-auth.js"></script>
@@ -61,35 +60,34 @@
 
 
 			<!-- start banner Area -->
-			
-			<section class="team-area section-gap team-page-teams" id="team">
-				<div class="container">
-					<div class="row d-flex justify-content-center">
-						<div class="menu-content pb-70 col-lg-8">
-							<div class="title text-center">
-								<h1 class="mb-10">Photographers</h1> 
-							</div>
-						</div>
-					</div>						
-					<div class="row justify-content-center d-flex align-items-center">
-						<div class="col-md-3 single-team">
-						    <div class="thumb">
-						        <img class="img-fluid" src="img/pages/t1.jpg" alt="">
-						        <div class="align-items-center justify-content-center d-flex">
-									<a href="#"><i class="fa fa-facebook"></i></a>
-									<a href="#"><i class="fa fa-twitter"></i></a>
-									<a href="#"><i class="fa fa-linkedin"></i></a>
-						        </div>
-						    </div>
-						    <div class="meta-text mt-30 text-center">
-							    <h4>Ethel Davis</h4>
-							    <p></p>									    	
-						    </div>
-						</div>
-						</div>	
-						
-						</div>	
-			</section>
+			<section class="team-area section-gap team-page-teams">
+			<div class="row">
+				<div class="col-lg-3"><img class="img-fluid" src="img/pages/t1.jpg" alt="" style="margin-left: 60px;"></div>
+				<div class="col-lg-3"><br><br><h2>Ethel Davis</h2><p>lorem ipsum</p><br><button class="book"><a href="#" class="mylink">BOOK</a></button></div>
+			</div>
+			<br>
+			</div>
+			<div class="tab" style="margin-left:60px;margin-right: 60px;">
+  				<button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">Bio</button>
+  				<button class="tablinks" onclick="openCity(event, 'Paris')">Gallery</button>
+			</div>
+
+				<!-- Tab content -->
+			<div id="London" class="tabcontent" style="margin-left:60px;margin-right: 60px;">
+  				<h3>Bio</h3>
+  				<p>Some points about the photographer</p>
+			</div>
+
+			<div id="Paris" class="tabcontent" style="margin-left:60px;margin-right: 60px;">
+  				<h3>Gallery</h3>
+  				<p>Pics</p> 
+			</div>
+
+			<div id="Tokyo" class="tabcontent" style="margin-left:60px;margin-right: 60px;">
+  				<h3>Tokyo</h3>
+  				<p>Tokyo is the capital of Japan.</p>
+			</div>
+		</section>
 			<!-- End feature Area -->
 
 			<!-- start footer Area -->
